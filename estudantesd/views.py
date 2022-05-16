@@ -148,6 +148,8 @@ def delete_owned(request):
     est_emails=Estudantes.objects.values_list('Email',flat=True)
     if request.user.email in est_emails:
         estudante= Estudantes.objects.get(Email=request.user.email)
+        if estudante.sol_feita:
+            solicitacao= Solicitacao.objects.get(RA=estudante.RA)
         estudante.delete()
         return HttpResponseRedirect(reverse('perfil'))
     else:
