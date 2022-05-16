@@ -190,7 +190,7 @@ def update_owned(request):
             template= loader.get_template('atualizar.html')
             return HttpResponse(template.render(context,request))
         else:
-            messages.error('Você não possui um perfil de estudante')
+            messages.error(request,'Você não possui um perfil de estudante')
             return HttpResponseRedirect('/registro')
 
 @login_required
@@ -210,7 +210,7 @@ def fazer_solicitacao(request):
         email_enviado= processar.enviar_email(mensagem_mime,estudante.Email)
 
         sol= Solicitacao(Nome=estudante.Nome,RA=estudante.RA,Email=estudante.Email,
-                         Notebook=Notebook,Deferida=deferida,Mensagem=mensagem_txt,EmailEnviado=email_enviado)
+                         Notebook=Notebook,Deferida=deferida,Mensagem= 'Email Pronto' ,EmailEnviado=email_enviado)
         sol.save()
 
         estudante.sol_feita=True
