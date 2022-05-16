@@ -1,0 +1,56 @@
+{% load static %}
+{% include 'perfil_header.html' %}
+    <div id="main">
+      <button class="openbtn" onclick="openNav()">&#9776;Abrir Menu</button>
+      <h2>Perfil - Usuário:{{user.username}}</h2><br>
+      <h2>Dados:</h2><br><br>
+      {% block checar %}
+        {% if user.email in est_emails %}
+        <table>
+          <tr class='label e-perfil'>
+            <td>RA </td>
+            <td>Nome </td>
+            <td>CEP </td>
+            <td>Email </td>
+            <td>Renda </td>
+            <td>Curso </td>
+            <td>Escola </td>
+            <td>Cor </td>
+            <td>Sexo </td>
+            <td>Motivação </td>
+            <td>Solicitação Feita</td>
+          </tr>
+          <tr class='zoom'>
+            <td><a href='update_owned'>{{estudante.RA}}</a></td>
+            <td>{{estudante.Nome}}</td>
+            <td>{{estudante.CEP}}</td>
+            <td>{{estudante.Email}}</td>
+            <td>{{estudante.renda}}</td>
+            <td>{{estudante.cod_curso}}</td>
+            <td>{{estudante.escola}}</td>
+            <td>{{estudante.cor}}</td>
+            <td>{{estudante.sexo}}</td>
+            <td>{{estudante.motivacao}}</td>
+            <td>{{estudante.sol_feita}}</td>
+          </tr>
+        </table><br>
+
+        {% else %}
+
+      <h2>Não cadastrado como estudante!</h2>
+      <table>
+        <tr class='label e-perfil'>
+          <td>Nome de Usuário:</td>
+          <td>Email</td>
+        </tr>
+        <tr class='zoom'>
+          <td><a>{{user.username}}</a></td>
+          <td>{{user.email}}</td>
+        </tr>
+      </table><br>
+        {% endif %}
+      {% endblock %}
+    </div>
+    <script src="{% static 'js/perfil.js' %}"></script>
+  </body>
+</html>

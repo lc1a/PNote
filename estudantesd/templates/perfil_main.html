@@ -1,0 +1,26 @@
+{% load static %}
+{% include 'perfil_header.html' %}
+    <div id="main">
+      <button class="openbtn" onclick="openNav()">&#9776;Abrir Menu</button>
+      <h2>Perfil - Usuário:{{user.username}}</h2><br>
+
+      {% block cond %}
+
+        {% if user.email in est_emails %}
+          <h2>Status de Registro: Registrado como estudante!<h2><br>
+            {% if estudante.sol_feita == False %}
+              <h2>Status de Solicitação: Não Feita.</h2><br>
+            {% else %}
+              <h2>Status de Solicitação: Solicitação Realizada!</h2><br>
+            {% endif %}
+        {% else %}
+          <h2>Status de Registro: Não Registrado como Estudante!</h2><br>
+          <h2><a href='/registro'>Clique aqui para Registrar.</a></h2><br>
+        {% endif %}
+
+      {% endblock %}
+
+    </div>
+    <script src="{% static 'js/perfil.js' %}"></script>
+  </body>
+</html>

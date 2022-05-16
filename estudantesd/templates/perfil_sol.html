@@ -1,0 +1,32 @@
+{% load static %}
+{% include 'perfil_header.html' %}
+    <div id="main">
+      <button class="openbtn" onclick="openNav()">&#9776;Abrir Menu</button>
+      <h2>Perfil - Usuário:{{user.username}}</h2><br>
+
+      {% block checar2 %}
+        {% if user.email in est_emails %}
+          {% if estudante.sol_feita == False %}
+      <div class='solicitacao'>
+        <h2><a href='{% url "fazer_solicitacao" %}'>Fazer Solicitação</a></h2>
+      </div>
+      <script src="{% static 'js/perfil.js' %}"></script>
+
+          {% else %}
+
+      <div class='solfeita'>
+        <h2><a href="{% url 'sol_feita' %}">Checar Solicitação</a></h2>
+      </div>
+
+          {% endif %}
+
+        {% else %}
+      <div class='solnaofeita'>
+      <h1>É necessário <a href='/registro'>registrar-se</a> como estudante para ter acesso às solicitações</h1>
+      </div>
+        {% endif %}
+      {% endblock %}
+    </div>
+    <script src="{% static 'js/perfil.js' %}"></script>
+  </body>
+</html>

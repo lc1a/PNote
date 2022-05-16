@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <title>ProjetoNotebook</title>
+  <link rel="icon" type="image/x-icon" href='{% static "media/cdia.ico" %}'>
+  <link rel="stylesheet" href='{% static "css/estudantes.css" %}'>
+  <script src="https://kit.fontawesome.com/b99362bf5b.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    {% include 'messages.html' %}
+    {% block content %}
+    {% endblock %}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <ul class='navbar'>
+      <li class='navbar-item'><a class="navbar-item" href="/">Página Inicial</a></li>
+      {% include 'navbar.html' %}
+    </ul><br><br><br><br><br><br>
+    <h1>Atualizar Estudante</h1>
+    <form action="{{estudante.id}}/updaterecord" method="post">
+      {% csrf_token %}
+      Nome:<br>
+      <textarea name='Nome'>{{estudante.Nome}}</textarea>
+      <br><br>
+      RA:<br>
+      <textarea name='RA'>{{estudante.RA}}</textarea>
+      <br><br>
+      CEP:<br>
+      <textarea name='CEP'>{{estudante.CEP}}</textarea>
+      <br><br>
+      Email:<br>
+      <textarea name='Email'>{{estudante.Email}}</textarea>
+      <br><br>
+      Renda:<br>
+      <input class='num' type='number' min=0 max=200000 name='renda' value='{{estudante.renda}}'>
+      <br><br>
+      Curso:<br>
+      <input class='num' type='number' min=1 max=9 name='cod_curso' value='{{estudante.cod_curso}}'>
+      <br><br>
+      Escola:<br>
+      <input class='num' type='number' min=1 max=2 name='escola' value='{{estudante.escola}}'>
+      <br><br>
+      Cor:<br>
+      <input class='num' type='number' min=1 max=2 name='cor' value='{{estudante.cor}}'>
+      <br><br>
+      Sexo:<br>
+      <input class='num' type='number' min=1 max=2 name='sexo' value='{{estudante.sexo}}'>
+      <br><br>
+      Motivação:<br>
+      <input class='num' type='number' min=0 max=10 name='motivacao' value='{{estudante.motivacao}}'>
+      <br><br>
+      Sol_Feita:<br>
+      {% if estudante.sol_feita == True %}
+      <input type='checkbox' class='num' name='sol_feita' checked>
+      <br><br>
+      {% else %}
+      <input type='checkbox' class='num' name='sol_feita'>
+      <br><br>
+      {% endif %}
+      <input type='submit' class='num' value='Submit'>
+    </form>
+  </body>
+</html>

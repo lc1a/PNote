@@ -1,0 +1,15 @@
+{% if request.user.is_superuser %}
+<li class='navbar-item'><a class="navbar-item" href="/lista_admin">Lista Estudantes (Adms)</a></li>
+<li class='navbar-item'><a class='navbar-item' href="{% url 'lista_solicitacoes' %}">Lista Solicitações (Adms)</a></li>
+<li class='navbar-item2'><a class='navbar-item2' href="{% url 'perfil' %}">Perfil</a></li>
+<li class='navbar-item'><a class='navbar-item' href="{% url 'logout' %}">Logout</a></li>
+<li class='navbar-item2'><a class='navbar-item'>Olá {{user.username}}</a></li>
+{% elif request.user.is_authenticated %}
+<li class='navbar-item2'><a class='navbar-item2' href="{% url 'perfil' %}">Perfil</a></li>
+<li class='navbar-item'><a class='navbar-item' href="{% url 'logout' %}">Logout</a></li>
+<li class='navbar-item2'><a class='navbar-item'>Olá {{user.username}}</a></li>
+{% else %}
+<li class='navbar-item'><a class='navbar-item' href="{% url 'login'%}">Login</a></li>
+<li class='navbar-item'><a class='navbar-item' href="{% url 'register' %}">Registre-se</a></li>
+<li class='navbar-item2'><a class='navbar-item'>Não Logado</a></li>
+{% endif %}
