@@ -44,6 +44,9 @@ def addrecord(request):
 @user_passes_test(supuser)
 def delete(request, id):
     estudante= Estudantes.objects.get(id=id)
+    if estudante.sol_feita:
+        solicitacao= Solicitacao.objects.get(RA=estudante.RA)
+        solicitacao.delete()
     estudante.delete()
     return HttpResponseRedirect(reverse('index'))
 @user_passes_test(supuser)
