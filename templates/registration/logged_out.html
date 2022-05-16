@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <header>
+    <title>ProjetoNotebook</title>
+    <link rel="icon" type="image/x-icon" href='{% static "media/cdia.ico" %}'>
+    <link rel="stylesheet" href='{% static "css/estudantes.css" %}'>
+    <script src="https://kit.fontawesome.com/b99362bf5b.js" crossorigin="anonymous"></script>
+  </header>
+  <body>
+    <ul class='navbar'>
+      <li class='navbar-item'><a class="navbar-item" href="/">Página Inicial</a></li>
+      {% include 'navbar.html' %}
+    </ul><br><br><br><br><br><br>
+    {% block content %}
+    <h2>Deslogado!</h2>
+    <h2><a href="{% url 'login'%}">Clique aqui para logar novamente.</a></h2>
+    {% endblock %}
+  </body>
+</html>
