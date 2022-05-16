@@ -155,34 +155,19 @@ body {
 }
 
 .ul1 {
-list-style: none;
+list-style-type: none;
 font-family: monospace;
 position: relative;
 padding-left: 33%
 }
 
 .ul1 .li1 {
+display:block;
+float:right;
 margin-bottom: 5px;
 border-bottom: 5px #d3d3d3 dotted;
-font-size: 35px;
-line-height: 1;
-width:600px
-}
-
-.ul1 .li1 .span1:nth-child(odd) {
-padding-right: 0px;
-color: #d3d3d3;
-}
-
-.ul1 .li1 .span1:nth-child(even) {
-float: right;
-padding-left: -7px;
-color: #d3d3d3;
-}
-
-.ul1 .span1 {
-position: relative;
-bottom: -2px;
+font-size: 50px;
+width:100px
 }
 
 *{box-sizing:border-box}
