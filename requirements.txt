@@ -80,7 +80,6 @@ pyrsistent
 PySocks 
 python-dateutil
 pytz==2021.3
-pywin32==302
 pywinpty 
 pyzmq 
 qtconsole 
