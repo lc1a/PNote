@@ -12,4 +12,4 @@
 
 >## PAAS configurada para realizar o build e deploy automáticos a partir de um novo commit à este repositório facilitando e agilizando a entrega hipotética para cliente.
 
-># Link do Site: [Acessar](www.projetonotebookcdia.com)
+># Link do Site: [Acessar](https://www.projetonotebookcdia.com)
