@@ -150,6 +150,7 @@ def delete_owned(request):
         estudante= Estudantes.objects.get(Email=request.user.email)
         if estudante.sol_feita:
             solicitacao= Solicitacao.objects.get(RA=estudante.RA)
+            solicitacao.delete()
         estudante.delete()
         return HttpResponseRedirect(reverse('perfil'))
     else:
