@@ -152,3 +152,19 @@ body {
 .navbar-item2:hover{
   background-color: #111;
 }
+
+h1.hom{
+  text-align: center;
+  font-family: monospace;
+  font-size: 40px;
+  font-weight:bold;
+  color:white
+}
+
+h2.hom{
+  text-align: center;
+  font-family: monospace;
+  font-size: 20px;
+  font-weight:bold;
+  color:white
+}
