@@ -154,21 +154,6 @@ body {
   background-color: #111;
 }
 
-.ul1 {
-list-style-type: none;
-font-family: monospace;
-position: relative;
-padding-left: 33%
-}
-
-.ul1 .li1 {
-display:block;
-float:right;
-margin-bottom: 5px;
-border-bottom: 5px #d3d3d3 dotted;
-font-size: 50px;
-width:100px
-}
 
 *{box-sizing:border-box}
 
