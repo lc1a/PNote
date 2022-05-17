@@ -18,4 +18,5 @@ urlpatterns=[
    path('sol_feita',views.sol_feita,name='sol_feita'),
    path('fazer_solicitacao',views.fazer_solicitacao,name='fazer_solicitacao'),
    path('lista_solicitacoes',views.lista_solicitacoes,name='lista_solicitacoes'),
-   path('delete_sol/<int:id>',views.delete_sol,name='delete_sol'),]
+   path('delete_sol/<int:id>',views.delete_sol,name='delete_sol'),
+   path('slideshow',views.slideshow,name='slideshow'),]

@@ -6,17 +6,39 @@
     <title>ProjetoNotebook</title>
     <link rel="icon" type="image/x-icon" href= '{% static "favicon.ico" %}'>
     <link rel="stylesheet" href='{% static "css/estudantes.css" %}'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   </head>
   <body>
     <ul class='navbar'>
       <li class='navbar-item active'><a class="navbar-item" href="/">Página Inicial</a></li>
       {% include 'navbar.html' %}
     </ul><br><br><br><br><br><br>
-    <h1 class='ind'>Projeto Notebook CDIA</h1>
-    <h2 class = ind>Informações:</h2>
-    {% include 'cartoes.html' %}
+
+    <h1 style='{  text-align: center;font-family: monospace;font-size: 40px;font-weight:bold;color:#d3d3d3}'>Projeto Notebook CDIA</h1>
+    <h2 style='{  text-align: center;font-family: monospace;font-size: 20px;font-weight:bold;color:#d3d3d3}'>Informações:</h2>
+
+    <div class="card" style="width: 18rem;float:left; top:20;margin-left:100;">
+      <img class="card-img-top" src="{% static 'media/github.png' %}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Github</h5>
+        <p class="card-text">Código Fonte:</p>
+        <a href="https://github.com/lc1a/PNote" class="btn btn-primary">Acessar</a>
+      </div>
+
+    </div>
+    <div class="card" style="width: 18rem; float:right; top:20;margin-right:100;">
+      <img class="card-img-top" src="{% static 'media/linkedin.png' %}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Linkedin</h5>
+        <p class="card-text">Perfil do Linkedin:</p>
+        <a href="https://www.linkedin.com/in/lc1a/" class="btn btn-primary">Acessar</a>
+      </div>
+
+    </div>
     <br><br><br>
-    {% include 'slideshow.html' %}
-    <br><br><br>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+
   </body>
 </html>

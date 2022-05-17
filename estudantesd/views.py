@@ -242,3 +242,6 @@ def sol_feita(request):
     else:
         messages.error(request,'Você não tem um Registro de Estudante.')
         return HttpResponseRedirect('/registro')
+def slideshow(request):
+    template=loader.get_template('slideshow.html')
+    return HttpResponse(template.render(request=request))

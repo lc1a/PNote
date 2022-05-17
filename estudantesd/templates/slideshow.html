@@ -1,6 +1,15 @@
 
 {% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+  <link rel="icon" type="image/x-icon" href= '{% static "favicon.ico" %}'>
+  <link rel="stylesheet" href='{% static "css/estudantes.css" %}'>
 <link rel='stylesheet' href="{% static 'slideshow.css' %}"
+<script src="{% static 'slide.js' %}"></script>
 <div class="slideshow-container">
 <!-- Full-width images with number and caption text -->
   <div class="mySlides fade">
@@ -62,3 +71,5 @@
 <span class="dot" onclick="currentSlide(10)"></span>
 </div>
 <script src="{% static 'slide.js' %}"></script>
+</body>
+</html>
