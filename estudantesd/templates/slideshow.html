@@ -2,74 +2,76 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
+    <link rel="icon" type="image/x-icon" href= '{% static "favicon.ico" %}'>
+    <link rel="stylesheet" href='{% static "css/estudantes.css" %}'>
+    <link rel='stylesheet' href="{% static 'slideshow.css' %}"
+  </head>
+  <body>
+    <link rel="icon" type="image/x-icon" href= '{% static "favicon.ico" %}'>
+    <link rel="stylesheet" href='{% static "css/estudantes.css" %}'>
+    <link rel='stylesheet' href="{% static 'slideshow.css' %}"
 
-</head>
-<body>
-  <link rel="icon" type="image/x-icon" href= '{% static "favicon.ico" %}'>
-  <link rel="stylesheet" href='{% static "css/estudantes.css" %}'>
-<link rel='stylesheet' href="{% static 'slideshow.css' %}"
-<script src="{% static 'slide.js' %}"></script>
-<div class="slideshow-container">
+    <div class="slideshow-container">
 <!-- Full-width images with number and caption text -->
-  <div class="mySlides fade">
-    <img src="{% static 'media/graf1.jpg' %}" style="width:100%">
-  </div>
+      <div class="mySlides fade">
+        <img src="{% static 'media/graf1.jpg' %}" style="width:100%">
+      </div>
 
-  <div class="mySlides fade">
-    <img src="{% static 'media/graf2.jpg' %}" style="width:100%">
-  </div>
+      <div class="mySlides fade">
+        <img src="{% static 'media/graf2.jpg' %}" style="width:100%">
+      </div>
 
-  <div class="mySlides fade">
-    <img src="{% static 'media/graf3.jpg' %}" style="width:100%">
-  </div>
+      <div class="mySlides fade">
+        <img src="{% static 'media/graf3.jpg' %}" style="width:100%">
+      </div>
 
-  <div class="mySlides fade">
-    <img src="{% static 'media/graf4.jpg' %}" style="width:100%">
-  </div>
+      <div class="mySlides fade">
+        <img src="{% static 'media/graf4.jpg' %}" style="width:100%">
+       </div>
 
-  <div class="mySlides fade">
-    <img src="{% static 'media/graf5.jpg' %}" style="width:100%">
-  </div>
+      <div class="mySlides fade">
+        <img src="{% static 'media/graf5.jpg' %}" style="width:100%">
+      </div>
 
-  <div class="mySlides fade">
-    <img src="{% static 'media/graf6.jpg' %}" style="width:100%">
-  </div>
+      <div class="mySlides fade">
+        <img src="{% static 'media/graf6.jpg' %}" style="width:100%">
+      </div>
 
-  <div class="mySlides fade">
-    <img src="{% static 'media/graf7.jpg' %}" style="width:100%">
-  </div>
+      <div class="mySlides fade">
+        <img src="{% static 'media/graf7.jpg' %}" style="width:100%">
+      </div>
 
-  <div class="mySlides fade">
-    <img src="{% static 'media/graf8.jpg' %}" style="width:100%">
-  </div>
+      <div class="mySlides fade">
+        <img src="{% static 'media/graf8.jpg' %}" style="width:100%">
+      </div>
 
-  <div class="mySlides fade">
-    <img src="{% static 'media/graf9.jpg' %}" style="width:100%">
-  </div>
+      <div class="mySlides fade">
+        <img src="{% static 'media/graf9.jpg' %}" style="width:100%">
+      </div>
 
-  <div class="mySlides fade">
-    <img src="{% static 'media/graf10.jpg' %}" style="width:100%">
-  </div>
+      <div class="mySlides fade">
+        <img src="{% static 'media/graf10.jpg' %}" style="width:100%">
+      </div>
 
 <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-<br>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <!-- The dots/circles -->
-<div style="text-align:center">
-<span class="dot" onclick="currentSlide(1)"></span>
-<span class="dot" onclick="currentSlide(2)"></span>
-<span class="dot" onclick="currentSlide(3)"></span>
-<span class="dot" onclick="currentSlide(4)"></span>
-<span class="dot" onclick="currentSlide(5)"></span>
-<span class="dot" onclick="currentSlide(6)"></span>
-<span class="dot" onclick="currentSlide(7)"></span>
-<span class="dot" onclick="currentSlide(8)"></span>
-<span class="dot" onclick="currentSlide(9)"></span>
-<span class="dot" onclick="currentSlide(10)"></span>
-</div>
-<script src="{% static 'slide.js' %}"></script>
+  <div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+  <span class="dot" onclick="currentSlide(6)"></span>
+  <span class="dot" onclick="currentSlide(7)"></span>
+  <span class="dot" onclick="currentSlide(8)"></span>
+  <span class="dot" onclick="currentSlide(9)"></span>
+  <span class="dot" onclick="currentSlide(10)"></span>
+  </div>
+  <script src="{% static 'slide.js' %}"></script>
 </body>
 </html>
