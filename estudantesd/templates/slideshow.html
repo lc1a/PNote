@@ -8,9 +8,10 @@
     <link rel='stylesheet' href="{% static 'slideshow.css' %}"
   </head>
   <body>
-    <link rel="icon" type="image/x-icon" href= '{% static "favicon.ico" %}'>
-    <link rel="stylesheet" href='{% static "css/estudantes.css" %}'>
-    <link rel='stylesheet' href="{% static 'slideshow.css' %}"
+    <ul class='navbar'>
+      <li class='navbar-item'><a class="navbar-item" href="/">Página Inicial</a></li>
+      {% include 'navbar.html' %}
+    </ul><br><br><br><br><br><br>
 
     <div class="slideshow-container">
 <!-- Full-width images with number and caption text -->
