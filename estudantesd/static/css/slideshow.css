@@ -1,90 +1,164 @@
+h1 {
+  text-align: center;
+  font-family: monospace;
+  font-size: 40px;
+  font-weight:bold;
+  color:#d3d3d3
+}
+h2 {
+  text-align: center;
+  font-family: monospace;
+  font-size: 20px;
+  font-weight:bold;
+  color:#d3d3d3
+}
+.navbar{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  width:100%;
+  overflow: hidden;
+  background-color: #333
+}
+.navbar-item{
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 12px 18px;
+  text-decoration: none;
+  font-size: 20px;
+}
+.navbar-item:hover{
+  background-color: #111;
+}
+.active{
+   background-color: #545454;
+}
+.navbar2 {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top:0;
+  width:100%;
+  overflow: hidden;
+  background-color: #333
+}
+.navbar-item2 {
+  float: right;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 12px 18px;
+  text-decoration: none;
+  font-size: 20px;
+}
+.navbar-item2:hover{
+  background-color: #111;
+}
 
-*{box-sizing:border-box}
+a {
+  text-align: center;
+  font-family: monospace;
+  color:#d3d3d3
+}
+/**----------**/
 
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
+body {
+  background-image:     linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url('/static/media/puc.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.hello {
+  opacity: 1 !important;
+}
+.full {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.full .content {
+  background-color: rgba(0,0,0,0.75) !important;
+  height: 100%;
+  width: 100%;
+  display: grid;
+}
+.full .content img {
+  left: 50%;
+  transform: translate3d(0, 0, 0);
+  animation: zoomin 1s ease;
+  max-width: 90%;
+  max-height: 90%;
   margin: auto;
 }
 
-/* Hide the images by default */
-.mySlides {
-  display: none;
+.byebye{
+  opacity:0;
+  transition: 1s ease;
 }
 
-/* Next & previous buttons */
-.prev, .next {
+.gallery {
+  display: grid;
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+.gallery img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 16px #333;
+  transition: all 1.5s ease;
+  opacity:0.9;
+}
+.gallery img:hover {
+  box-shadow: 0 0 32px #333;
+  opacity:1;
+}
+.gallery .content {
+  padding: 4px;
+}
+.gallery .gallery-item {
+  transition: grid-row-start 300ms linear;
+  transition: transform 300ms ease;
+  transition: all 0.8s ease;
   cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color:#d3d3d3;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+}
+.gallery .gallery-item:hover {
+  transform: scale(1.050);
+}
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  }
+}
+@media (max-width: 400px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+  }
 }
 
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
+@keyframes zoomin {
+  0%{
+    max-width: 50%;
+    transform: rotate(-5deg);
+    filter: blur(4px);
+  }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text {
-  color: black;
-  font-size: 25px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-  display:none;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: black;
-  font-size: 30px;
-  padding: 200px 0px;
-  position: absolute;
-  top: 0;
-  display: none;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {opacity: .5}
-  to {opacity: 1}
+  50% {
+    max-width: 50%;
+    transform: rotate(5deg);
+    filter: blur(4px);
+  }
+  100% {
+    max-width: 90%;
+    transform: rotate(0deg);
+  }
 }

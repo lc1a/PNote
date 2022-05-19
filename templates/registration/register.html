@@ -14,10 +14,65 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <style>h1{  text-align: center;
+      font-family: monospace;
+      font-size: 60px;
+      font-weight:bold;
+      color:#d3d3d3}
+       h2{
+        text-align: center;
+        font-family: monospace;
+        font-size: 40px;
+        font-weight:bold;
+        color:#d3d3d3
+      }
+      li{
+       text-align: center;
+       font-family: monospace;
+       font-size: 25px;
+       font-weight:bold;
+       color: #d3d3d3
+     }
+     div{text-align: center;
+        font-family:'Courier New','monospace';
+        font-size: 30px;
+        font-weight:bold 100;
+        color: #ffa07a}
+     input{
+       text-align: center;
+       font-family: monospace;
+       font-size: 20px;
+       width:250px;
+       height:40px;
+       border:3px solid;
+       background-color:#d3d3d3;
+     }
+    input:focus{
+      width:260px;
+      height:50px;
+      transition: 0.3s ease;
+      font-size:25px;
+      outline-style:solid;
+      outline-color:black
+    }
+    button{
+      text-align: center;
+      font-family: monospace;
+      font-size: 20px;
+      width:250px;
+      height:40px;
+      border:2px solid;
+      background-color:#d3d3d3;
+    }
+    button:hover{
+      box-shadow: 5px 25px 25px 5px rgba(1,1,1,0.8), 0 17px 50px 0 rgba(1,1,1,0.7);
+      background-color:#d3d3d3;
+    }
+    </style>
     <ul class='navbar'>
       <li class='navbar-item'><a class="navbar-item" href="/">Página Inicial</a></li>
       {% include 'navbar.html' %}
-    </ul><br><br><br><br><br><br>
+    </ul><br>
       {% include 'messages.html' %}<br><br><br>
       {% load crispy_forms_tags %}
         <div class="container py-5">

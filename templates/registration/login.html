@@ -17,6 +17,62 @@
       <li class='navbar-item'><a class="navbar-item" href="/">Página Inicial</a></li>
       {% include 'navbar.html' %}
     </ul><br><br><br><br><br><br>
+    <style>td{  text-align: center;
+      font-family: monospace;
+      font-size: 40px;
+      font-weight:bold;
+      color:#d3d3d3}
+       tr{
+        text-align: center;
+        font-family: monospace;
+        font-size: 40px;
+        font-weight:bold;
+        color:#ffa07a
+      }
+     }
+     h2{text-align: center;
+        font-family:'Courier New','monospace';
+        font-size: 40px;
+        font-weight:bold 100;
+        color: #ffa07a}
+    td.ll{
+      text-align: center;
+         font-family:'Courier New','monospace';
+         font-size: 40px;
+         font-weight:bold 50;
+         color: #ffa07a
+    }
+     input{
+       text-align: center;
+       font-family: monospace;
+       font-size: 20px;
+       width:250px;
+       height:40px;
+       border:3px solid;
+       background-color:#d3d3d3;
+     }
+    input:focus{
+      width:260px;
+      height:50px;
+      transition: 0.3s ease;
+      font-size:25px;
+      outline-style:solid;
+      outline-color:black
+    }
+    input[type='submit']{
+      text-align: center;
+      font-family: monospace;
+      font-size: 20px;
+      width:250px;
+      height:40px;
+      border:2px solid;
+      background-color:#d3d3d3;
+    }
+    input[type='submit']:hover{
+      box-shadow: 5px 25px 25px 5px rgba(1,1,1,0.8), 0 17px 50px 0 rgba(1,1,1,0.7);
+      background-color:#d3d3d3;
+    }
+    </style>
     {% block content %}
 
     {% if form.errors %}
@@ -35,17 +91,18 @@
       {% csrf_token %}
       <table>
         <tr>
-          <td>{{ form.username.label_tag }}</td>
+          <td class='ll'>{{ form.username.label_tag }}</td>
           <td>{{ form.username }}</td>
         </tr>
         <tr>
-          <td>{{ form.password.label_tag }}</td>
+          <td class='ll'>{{ form.password.label_tag }}</td>
           <td>{{ form.password }}</td>
         </tr>
       </table>
+      <br><br>
       <input type="submit" value="Login" />
       <input type="hidden" name="next" value="{{ next }}" />
-    </form>
+    </form><br><br>
 
     {# Assumes you setup the password_reset view in your URLconf #}
     <h2><a href="{% url 'password_reset' %}">Perdeu a senha ?</a></h2>

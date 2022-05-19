@@ -13,17 +13,80 @@
     {% include 'messages.html' %}
   </head>
   <body>
+    <style>h1{  text-align: center;
+      font-family: monospace;
+      font-size: 60px;
+      font-weight:bold;
+      color:#d3d3d3}
+       h2{
+        text-align: center;
+        font-family: monospace;
+        font-size: 40px;
+        font-weight:bold;
+        color:#d3d3d3
+      }
+     div{text-align: center;
+        font-family:'Courier New','monospace';
+        font-size: 30px;
+        font-weight:bold 100;
+        color: #ffa07a}
+     input[type='text']{
+       position: relative;
+       left: 43%;
+       text-align: center;
+       font-family: monospace;
+       font-size: 20px;
+       width:250px;
+       height:40px;
+       border:3px solid;
+       background-color:#d3d3d3;
+     }
+     input[type='number']{
+       position: relative;
+       left: 43%;
+       text-align: center;
+       font-family: monospace;
+       font-size: 20px;
+       width:250px;
+       height:40px;
+       border:3px solid;
+       background-color:#d3d3d3;
+     }
+    input:focus{
+      width:260px;
+      height:50px;
+      transition: 0.3s ease;
+      font-size:25px;
+      outline-style:solid;
+      outline-color:black
+    }
+    button{
+      right:10%;
+      text-align: center;
+      font-family: monospace;
+      font-size: 20px;
+      width:320px;
+      height:50px;
+      border:2px solid;
+      background-color:#d3d3d3;
+    }
+    button:hover{
+      box-shadow: 5px 25px 25px 5px rgba(1,1,1,0.8), 0 17px 50px 0 rgba(1,1,1,0.7);
+      background-color:#d3d3d3;
+    }
+    </style>
     {% block content %}
     <ul class='navbar'>
       <li class='navbar-item'><a class="navbar-item" href="/">Página Inicial</a></li>
       {% include 'navbar.html' %}
-    </ul><br><br><br><br><br><br>
+    </ul><br><br>
     <div>
       <h1>Registrar como Estudante</h1>
       <form method="post">
           {% csrf_token %}
           {{register_form|crispy}}
-          <button type="submit">Submit</button>
+          <br>
+          <button type="submit">Registrar</button>
       </form>
     </div>
     <!-- Optional Javascript -->
