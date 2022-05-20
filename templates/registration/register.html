@@ -11,6 +11,21 @@
   </head>
 
   <body>
+    <ul class='navbar'>
+      <li class='navbar-item'><a class="navbar-item" href="/">Página Inicial</a></li>
+      {% include 'navbar.html' %}
+    </ul><br><br><br>
+    {% block mensagens %}
+      {% if messages %}
+      <style>
+      ul>li{list-style-type:none;display:block;float:left;text-align:center;padding:12px 12px}
+      div{text-align:left;font-family:monospace;font-size:20px;color:black;}
+    </style>
+        {% for m in messages %}
+            <br><li class="popup" id='myPopup' onclick='Hide()'><div class='popuptext'>{{m}}</div></li>
+        {% endfor %}
+      {% endif %}
+    {% endblock %}
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -68,12 +83,54 @@
       box-shadow: 5px 25px 25px 5px rgba(1,1,1,0.8), 0 17px 50px 0 rgba(1,1,1,0.7);
       background-color:#d3d3d3;
     }
+    /* Popup container - can be anything you want */
+    .popup {
+      position: fixed;
+      display: block;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      width:120%;
+      height:300px;
+      list-style:none;
+      overflow:auto;
+
+
+    }
+
+    /* The actual popup */
+    .popup .popuptext {
+      visibility: visible;
+      opacity:0.95;
+      font-family:monospace;
+      font-weight:bold;
+      background-color: #CD5C5C;
+      text-align: center;
+      border-radius: 15px;
+      position: absolute;
+      width:90%;
+      margin-left:-10px;
+      height: 150px;
+      list-style: none;
+      display:block;
+      padding-right:2px;
+    }
+
+    .hide{
+      transition:1.5s ease;
+      visibility:hidden;
+      opacity: 0;
+    }
     </style>
-    <ul class='navbar'>
-      <li class='navbar-item'><a class="navbar-item" href="/">Página Inicial</a></li>
-      {% include 'navbar.html' %}
-    </ul><br>
-      {% include 'messages.html' %}<br><br><br>
+    <script>
+   // When the user clicks on div, open the popup
+    function Hide() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.add("hide");}
+</script>
+
       {% load crispy_forms_tags %}
         <div class="container py-5">
 	        <h1>Registre-se</h1>

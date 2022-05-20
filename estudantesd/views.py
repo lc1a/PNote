@@ -33,8 +33,11 @@ def addrecord(request):
      if request.method == "POST":
        form = forms.EstudanteForm(request.POST)
        if form.is_valid():
-         user = form.save()
-         return HttpResponseRedirect('/')
+         if request.POST.get('Email')==request.user.email:
+           user = form.save()
+           return HttpResponseRedirect('/')
+         else:
+           messages.error(request,'E-mail não corresponde ao E-mail usado no registro de usuário.')
        messages.error(request,"Registro Falhou, Informações Inválidas")
      form = forms.EstudanteForm()
      context={"register_form":form}
@@ -106,7 +109,7 @@ def register(request):
     if form.is_valid():
       user = form.save()
       return HttpResponseRedirect('/')
-    messages.error(request,"Registro Falhou, Informações Inválidas")
+    messages.error(request,form.errors)
   form = forms.NovoEstudante()
   context={"register_form":form}
   template= loader.get_template('registration/register.html')
